@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="513.0" prefWidth="626.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.rental.main.Mobil.MobilController">
+   <children>
+      <VBox prefHeight="513.0" prefWidth="636.0">
+         <children>
+            <Pane prefHeight="44.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="BackButton" layoutX="533.0" layoutY="10.0" mnemonicParsing="false" onAction="#BackButtonClick" text="Back" />
+                  <Label fx:id="MobilLabel" layoutX="76.0" layoutY="15.0" text="Menu Mobil" />
+               </children>
+            </Pane>
+            <Pane prefHeight="51.0" prefWidth="600.0">
+               <children>
+                  <Label fx:id="MerkLabel" layoutX="14.0" layoutY="17.0" text="Merk" />
+                  <TextField fx:id="MerkField" layoutX="182.0" layoutY="8.0" prefHeight="25.0" prefWidth="339.0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="44.0" prefWidth="600.0">
+               <children>
+                  <Label fx:id="ModelLabel" layoutX="14.0" layoutY="11.0" text="Model" />
+                  <TextField fx:id="ModelField" layoutX="182.0" layoutY="7.0" prefHeight="25.0" prefWidth="339.0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="46.0" prefWidth="670.0">
+               <children>
+                  <Label fx:id="TahunLabel" layoutX="14.0" layoutY="13.0" text="Tahun" />
+                  <TextField fx:id="TahunField" layoutX="182.0" layoutY="9.0" prefHeight="25.0" prefWidth="339.0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="50.0" prefWidth="670.0">
+               <children>
+                  <Label fx:id="PlatLabel" layoutX="14.0" layoutY="10.0" text="Plat" />
+                  <TextField fx:id="PlatField" layoutX="182.0" layoutY="11.0" prefHeight="25.0" prefWidth="339.0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="45.0" prefWidth="670.0">
+               <children>
+                  <Label fx:id="HargaSewaLabel" layoutX="14.0" layoutY="8.0" text="Harga Sewa" />
+                  <TextField fx:id="HargaSewaField" layoutX="182.0" layoutY="4.0" prefHeight="25.0" prefWidth="339.0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="44.0" prefWidth="670.0">
+               <children>
+                  <Label fx:id="StatusLabel" layoutX="14.0" layoutY="6.0" text="Status" />
+                  <ChoiceBox fx:id="StatusChoiceBox" layoutX="185.0" layoutY="7.0" prefWidth="150.0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="48.0" prefWidth="666.0">
+               <children>
+                  <Button fx:id="SaveButton" layoutX="50.0" layoutY="7.0" mnemonicParsing="false" onAction="#SaveButtonClick" text="Save" />
+                  <Button fx:id="CancelButton" layoutX="132.0" layoutY="7.0" mnemonicParsing="false" onAction="#CancelButtonClick" text="Cancel" />
+                  <TextField fx:id="SearchField" layoutX="399.0" layoutY="9.0" prefHeight="25.0" prefWidth="184.0" />
+                  <Label fx:id="SearchLabel" layoutX="353.0" layoutY="11.0" text="Search" />
+               </children>
+            </Pane>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0">
+               <content>
+                  <TableView fx:id="MobilTable" onMouseClicked="#MobilTableClick" prefHeight="200.0" prefWidth="609.0">
+                    <columns>
+                      <TableColumn fx:id="colNomor" minWidth="5.0" prefWidth="39.0" text="No" />
+                      <TableColumn fx:id="colIdMobil" prefWidth="36.0" text="Id" visible="false" />
+                        <TableColumn fx:id="colMerk" prefWidth="71.0" text="Merk" />
+                        <TableColumn fx:id="colModel" prefWidth="83.0" text="Model" />
+                        <TableColumn fx:id="colTahun" prefWidth="93.0" text="Tahun" />
+                        <TableColumn fx:id="colPlat" prefWidth="71.0" text="Plat " />
+                        <TableColumn fx:id="colHargaSewa" prefWidth="81.0" text="Harga Sewa" />
+                        <TableColumn fx:id="colStatus" minWidth="0.0" prefWidth="50.0" text="Status" />
+                        <TableColumn fx:id="colAction" prefWidth="100.0" text="Action" />
+                    </columns>
+                  </TableView>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

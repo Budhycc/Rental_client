@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.rental.main.Pelanggan.PelangganController">
+   <children>
+      <VBox prefHeight="450.0" prefWidth="600.0">
+         <children>
+            <Pane prefHeight="37.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="BackButton" layoutX="534.0" layoutY="6.0" mnemonicParsing="false" onAction="#BackButtonClick" text="Back" />
+                  <Label fx:id="PelangganLabel" layoutX="94.0" layoutY="8.0" text="Menu Pelanggan" />
+               </children>
+            </Pane>
+            <Pane prefHeight="42.0" prefWidth="600.0">
+               <children>
+                  <Label fx:id="NamaLabel" layoutX="14.0" layoutY="13.0" text="Nama" />
+                  <TextField fx:id="NamaField" layoutX="151.0" layoutY="9.0" prefHeight="25.0" prefWidth="337.0" />
+               </children></Pane>
+            <Pane prefHeight="54.0" prefWidth="600.0">
+               <children>
+                  <Label fx:id="AlamatLabel" layoutX="14.0" layoutY="19.0" text="Alamat" />
+                  <TextField fx:id="AlamatField" layoutX="151.0" layoutY="15.0" prefHeight="25.0" prefWidth="337.0" />
+               </children></Pane>
+            <Pane prefHeight="50.0" prefWidth="600.0">
+               <children>
+                  <Label fx:id="NoTelpLabel" layoutX="14.0" layoutY="17.0" text="No Telp" />
+                  <TextField fx:id="NoTelpField" layoutX="151.0" layoutY="13.0" prefHeight="25.0" prefWidth="337.0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="50.0" prefWidth="600.0">
+               <children>
+                  <Label fx:id="EmailLabel" layoutX="14.0" layoutY="17.0" text="Email" />
+                  <TextField fx:id="EmailField" layoutX="151.0" layoutY="13.0" prefHeight="25.0" prefWidth="337.0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="52.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="SaveButton" layoutX="57.0" layoutY="11.0" mnemonicParsing="false" onAction="#SaveButtonClick" text="Save" />
+                  <Button fx:id="CancelButton" layoutX="140.0" layoutY="11.0" mnemonicParsing="false" onAction="#CancelButtonClick" text="Cancel" />
+                  <TextField fx:id="SearchField" layoutX="368.0" layoutY="11.0" />
+                  <Label fx:id="SearchLabel" layoutX="325.0" layoutY="15.0" text="Search" />
+               </children>
+            </Pane>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="PelangganTable" layoutX="7.0" onMouseClicked="#PelangganTableClick" prefHeight="200.0" prefWidth="577.0">
+                          <columns>
+                              <TableColumn fx:id="colNomor" prefWidth="75.0" text="No" />
+                              <TableColumn fx:id="colIdPelanggan" prefWidth="75.0" text="Id" visible="false" />
+                              <TableColumn fx:id="colNama" prefWidth="73.0" text="Nama" />
+                              <TableColumn fx:id="colAlamat" minWidth="8.0" prefWidth="94.0" text="Alamat" />
+                              <TableColumn fx:id="colNoTelepon" prefWidth="115.0" text="No Telp" />
+                              <TableColumn fx:id="colEmail" minWidth="0.0" prefWidth="98.0" text="Email" />
+                              <TableColumn fx:id="colAction" minWidth="0.0" prefWidth="109.0" text="Action" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

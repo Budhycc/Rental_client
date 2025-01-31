@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="241.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.rental.main.Menu.MenuController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="241.0">
+         <children>
+            <Label fx:id="MenuLabel" prefHeight="31.0" prefWidth="244.0" text="Menu " />
+            <Pane prefHeight="75.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="PelangganButton" layoutX="73.0" layoutY="25.0" mnemonicParsing="false" onAction="#PelangganButtonClick" prefHeight="25.0" prefWidth="95.0" text="Pelanggan" />
+               </children>
+            </Pane>
+            <Pane prefHeight="116.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="MobilButton" layoutX="63.0" layoutY="46.0" mnemonicParsing="false" onAction="#MobilButtonClick" prefHeight="25.0" prefWidth="116.0" text="Mobil" />
+               </children>
+            </Pane>
+            <Pane prefHeight="94.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="TransaksiButton" layoutX="66.0" layoutY="35.0" mnemonicParsing="false" onAction="#TransaksiButtonClick" prefHeight="25.0" prefWidth="109.0" text="Transaksi" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
