@@ -32,8 +32,6 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 public class TransaksiController {
-    // this shit variable because im so fckup
-    // shit shit shit, i dont even know wtf was going on
     // Data Click Pelanggan
     private int idP;
     private int idPp;
@@ -443,48 +441,6 @@ public class TransaksiController {
         loadDataTransaksiFromAPI();
     }
 
-//    private void loadDataTransaksiFromAPI() {
-//        new Thread(() -> {
-//            try {
-//                // URL API
-//                URL url = new URL(ApiUrl.getapiUrl()+"api/transaksi");
-//                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-//                connection.setRequestMethod("GET");
-//                connection.setRequestProperty("Content-Type", "application/json");
-//
-//                BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-//                StringBuilder response = new StringBuilder();
-//                String line;
-//                while ((line = in.readLine()) != null) {
-//                    response.append(line);
-//                }
-//                in.close();
-//
-//                // Parsing JSON ke List
-//                Gson gson = new Gson();
-//                Type listType = new TypeToken<List<TransaksiData>>() {}.getType();
-//                List<TransaksiData> result = gson.fromJson(response.toString(), listType);
-//
-//                // Memperbarui tabel di UI thread
-//                Platform.runLater(() -> {
-//                    transaksiList.clear();
-//                    int nomor = 1;
-//                    for (TransaksiData transaksi : result) {
-//                        transaksi.setNomor(nomor++); // Menambahkan nomor urut
-//                        transaksiList.add(transaksi);
-//                    }
-//                });
-//            } catch (Exception e) {
-//                Platform.runLater(() -> {
-//                    Alert alert = new Alert(Alert.AlertType.ERROR);
-//                    alert.setTitle("Error");
-//                    alert.setHeaderText("Gagal memuat data");
-//                    alert.setContentText("Error: " + e.getMessage());
-//                    alert.showAndWait();
-//                });
-//            }
-//        }).start();
-//    }
 
     private void loadDataTransaksiFromAPI() {
         new Thread(() -> {
@@ -616,9 +572,6 @@ public class TransaksiController {
         }).start();
     }
 
-
-
-    // holy shit why the fck the update dosnt work 
     private void saveTransaksi() {
         if (!isInputValid()) return;
 
@@ -709,7 +662,6 @@ public class TransaksiController {
         }
     }
 
-    // why im doing this
     private void updateCar(String mobilId, String newStatus) {
         try {
             // Ambil data mobil yang sudah disimpan di variabel sementara
@@ -743,42 +695,14 @@ public class TransaksiController {
         }
     }
 
-    // fck this im just duplicate this
-    // im fck
     private void updateCarT(String mobilId, String newStatus) {
         try {
-            // Ambil data mobil yang sudah disimpan di variabel sementara
-//            String merk = merkMobil;
-//            String model = modelMobil;
-//            String tahun = tahunMobil;
-//            String plat = platMobil;
-//            String hargaSewa = hargaSewaMobil;
-
-            // im just lazy
             int id = idM;
             String merk = merkMobilTransaksi;
             String model = modelMobilTransaksi;
             String tahun = String.valueOf(tahunMobilTransaksi);
             String plat = platMobilTransaksi;
             String hargaSewa = hargaSewaMobilTransaksi;
-
-            // i dont care
-//            String mobilId = String.valueOf(idM); // ID mobil yang diambil dari mobil yang dipilih
-//            String mobilMerk = merkMobilTransaksi; // Merk mobil
-//            String mobilModel = modelMobilTransaksi; // Model mobil
-//            String mobilTahun = String.valueOf(tahunMobilTransaksi); // Tahun mobil
-//            String mobilPlatNomor = platMobilTransaksi; // Plat nomor mobil
-//            String mobilHargaSewaPerHari = hargaSewaMobilTransaksi; // Harga sewa per hari mobil
-//            String mobilStatus = statusMobilTransaksi; // Status mobil
-
-
-//            String mobilId = String.valueOf(idMobilIndex); // ID mobil yang diambil dari mobil yang dipilih
-//            String mobilMerk = merkMobil; // Merk mobil
-//            String mobilModel = modelMobil; // Model mobil
-//            String mobilTahun = String.valueOf(tahunMobil); // Tahun mobil
-//            String mobilPlatNomor = platMobil; // Plat nomor mobil
-//            String mobilHargaSewaPerHari = hargaSewaMobil; // Harga sewa per hari mobil
-//            String mobilStatus = statusMobil; // Status mobil
 
             // Format JSON untuk mengubah status mobil
             String json = String.format("{\"merk\":\"%s\", \"model\":\"%s\", \"tahun\":\"%s\", \"platNomor\":\"%s\", \"hargaSewaPerHari\":\"%s\", \"status\":\"%s\"}",
@@ -803,32 +727,98 @@ public class TransaksiController {
             showAlert("Error", "Gagal mengubah status mobil: " + ex.getMessage(), Alert.AlertType.ERROR);
         }
     }
+// KODE APAAN INI
+//    private void calculateTotalHarga() {
+//        if (TanggalMulaiDatePicker.getValue() != null && TanggalSelesaiDatePicker.getValue() != null && hargaSewaMobil != null) {
+//            // Hitung selisih hari antara tanggal mulai dan tanggal selesai
+//            LocalDate mulai = TanggalMulaiDatePicker.getValue();
+//            LocalDate selesai = TanggalSelesaiDatePicker.getValue();
+//            long jumlahHari = ChronoUnit.DAYS.between(mulai, selesai);
+//
+//            // Pastikan jumlah hari tidak negatif
+//            if (jumlahHari < 0) {
+//                showAlert("Error", "Tanggal selesai tidak boleh sebelum tanggal mulai.", Alert.AlertType.ERROR);
+//                return;
+//            }
+//
+//            // Hitung total harga
+//            double hargaSewaPerHari = Double.parseDouble(hargaSewaMobil);
+//            double totalHarga = hargaSewaPerHari * jumlahHari;
+//
+//            // Format total harga, menghilangkan .0 jika total harga adalah angka bulat
+//            String totalHargaString = (totalHarga % 1 == 0) ? String.format("%.0f", totalHarga) : String.format("%.2f", totalHarga);
+//
+//            // Update TotalHargaField
+//            TotalHargaField.setText(totalHargaString);
+//        }
+//    }
 
     private void calculateTotalHarga() {
-        if (TanggalMulaiDatePicker.getValue() != null && TanggalSelesaiDatePicker.getValue() != null && hargaSewaMobil != null) {
-            // Hitung selisih hari antara tanggal mulai dan tanggal selesai
+        // Check if all required fields are filled
+        if (TanggalMulaiDatePicker.getValue() == null ||
+                TanggalSelesaiDatePicker.getValue() == null ||
+                hargaSewaMobil == null || hargaSewaMobil.isEmpty()) {
+            return;
+        }
+
+        try {
             LocalDate mulai = TanggalMulaiDatePicker.getValue();
             LocalDate selesai = TanggalSelesaiDatePicker.getValue();
-            long jumlahHari = ChronoUnit.DAYS.between(mulai, selesai);
 
-            // Pastikan jumlah hari tidak negatif
-            if (jumlahHari < 0) {
+            // Validate dates
+            if (selesai.isBefore(mulai)) {
                 showAlert("Error", "Tanggal selesai tidak boleh sebelum tanggal mulai.", Alert.AlertType.ERROR);
+                TotalHargaField.setText("0");
                 return;
             }
 
-            // Hitung total harga
-            double hargaSewaPerHari = Double.parseDouble(hargaSewaMobil);
+            // Calculate days between dates
+            long jumlahHari = ChronoUnit.DAYS.between(mulai, selesai);
+
+            // Ensure minimum rental period is 1 day
+            if (jumlahHari < 1) {
+                jumlahHari = 1;
+            }
+
+            // Parse and validate rental price
+            double hargaSewaPerHari;
+            try {
+                hargaSewaPerHari = Double.parseDouble(hargaSewaMobil);
+                if (hargaSewaPerHari <= 0) {
+                    throw new NumberFormatException("Harga sewa harus lebih dari 0");
+                }
+            } catch (NumberFormatException e) {
+                showAlert("Error", "Harga sewa mobil tidak valid: " + e.getMessage(), Alert.AlertType.ERROR);
+                return;
+            }
+
+            // Calculate total price
             double totalHarga = hargaSewaPerHari * jumlahHari;
 
-            // Format total harga, menghilangkan .0 jika total harga adalah angka bulat
-            String totalHargaString = (totalHarga % 1 == 0) ? String.format("%.0f", totalHarga) : String.format("%.2f", totalHarga);
+            // Format the result
+            String totalHargaString;
+            if (totalHarga % 1 == 0) {
+                totalHargaString = String.format("%.0f", totalHarga);
+            } else {
+                totalHargaString = String.format("%.2f", totalHarga);
+            }
 
-            // Update TotalHargaField
+            // Update the field
             TotalHargaField.setText(totalHargaString);
+
+        } catch (Exception e) {
+            showAlert("Error", "Gagal menghitung total harga: " + e.getMessage(), Alert.AlertType.ERROR);
+            TotalHargaField.setText("0");
         }
     }
 
+//    private void showAlert(String title, String message, Alert.AlertType alertType) {
+//        Alert alert = new Alert(alertType);
+//        alert.setTitle(title);
+//        alert.setHeaderText(null);
+//        alert.setContentText(message);
+//        alert.showAndWait();
+//    }
 
     private boolean isInputValid() {
         if (PelangganField.getText().trim().isEmpty() ||
@@ -1099,8 +1089,6 @@ public class TransaksiController {
         selectedTransaksiId = -1;
         SaveButton.setText("Save");
     }
-
-
 
     @FXML
     protected void SaveButtonClick() {
