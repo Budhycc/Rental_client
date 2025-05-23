@@ -695,38 +695,40 @@ public class TransaksiController {
         }
     }
 
-    private void updateCarT(String mobilId, String newStatus) {
-        try {
-            int id = idM;
-            String merk = merkMobilTransaksi;
-            String model = modelMobilTransaksi;
-            String tahun = String.valueOf(tahunMobilTransaksi);
-            String plat = platMobilTransaksi;
-            String hargaSewa = hargaSewaMobilTransaksi;
+//    private void updateCarT(String mobilId, String newStatus) {
+//        try {
+//            int id = idM;
+//            String merk = merkMobilTransaksi;
+//            String model = modelMobilTransaksi;
+//            String tahun = String.valueOf(tahunMobilTransaksi);
+//            String plat = platMobilTransaksi;
+//            String hargaSewa = hargaSewaMobilTransaksi;
+//
+//            // Format JSON untuk mengubah status mobil
+//            String json = String.format("{\"merk\":\"%s\", \"model\":\"%s\", \"tahun\":\"%s\", \"platNomor\":\"%s\", \"hargaSewaPerHari\":\"%s\", \"status\":\"%s\"}",
+//                    merk, model, tahun, plat, hargaSewa, newStatus);
+//
+//            // Kirim permintaan PUT ke API
+//            URL url = new URL(ApiUrl.getapiUrl() + "api/mobil/" + id);
+//            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+//            connection.setRequestMethod("PUT");
+//            connection.setRequestProperty("Content-Type", "application/json");
+//            connection.setDoOutput(true);
+//            connection.getOutputStream().write(json.getBytes());
+//
+//            int responseCode = connection.getResponseCode();
+//            if (responseCode == HttpURLConnection.HTTP_OK) {
+//                // Jika berhasil, muat ulang data mobil
+//                loadDataMobilFromAPI();
+//            } else {
+//                showAlert("Error", "Gagal mengubah status mobil. Kode respons: " + responseCode, Alert.AlertType.ERROR);
+//            }
+//        } catch (Exception ex) {
+//            showAlert("Error", "Gagal mengubah status mobil: " + ex.getMessage(), Alert.AlertType.ERROR);
+//        }
+//    }
+//
 
-            // Format JSON untuk mengubah status mobil
-            String json = String.format("{\"merk\":\"%s\", \"model\":\"%s\", \"tahun\":\"%s\", \"platNomor\":\"%s\", \"hargaSewaPerHari\":\"%s\", \"status\":\"%s\"}",
-                    merk, model, tahun, plat, hargaSewa, newStatus);
-
-            // Kirim permintaan PUT ke API
-            URL url = new URL(ApiUrl.getapiUrl() + "api/mobil/" + id);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod("PUT");
-            connection.setRequestProperty("Content-Type", "application/json");
-            connection.setDoOutput(true);
-            connection.getOutputStream().write(json.getBytes());
-
-            int responseCode = connection.getResponseCode();
-            if (responseCode == HttpURLConnection.HTTP_OK) {
-                // Jika berhasil, muat ulang data mobil
-                loadDataMobilFromAPI();
-            } else {
-                showAlert("Error", "Gagal mengubah status mobil. Kode respons: " + responseCode, Alert.AlertType.ERROR);
-            }
-        } catch (Exception ex) {
-            showAlert("Error", "Gagal mengubah status mobil: " + ex.getMessage(), Alert.AlertType.ERROR);
-        }
-    }
 // KODE APAAN INI
 //    private void calculateTotalHarga() {
 //        if (TanggalMulaiDatePicker.getValue() != null && TanggalSelesaiDatePicker.getValue() != null && hargaSewaMobil != null) {
