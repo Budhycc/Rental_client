@@ -3,7 +3,7 @@ module org.rental.main {
     requires javafx.fxml;
 
     requires org.controlsfx.controls;
-    requires org.kordamp.bootstrapfx.core;
+    // requires org.kordamp.bootstrapfx.core;
     requires com.google.gson;
 
     exports org.rental.main;
